@@ -53,12 +53,12 @@ CPPFLAGS = -std=c99
 OBJDUMP = arm-none-eabi-objdump
 SIZE = arm-none-eabi-size 
 CPPFLAGS = -E
-ASF = -mcpu=$(CPU) -m$(ARCH) -march=armv7e-m -mfloat-abi=hard -mfpu=fpv4-sp-d16 --specs=$(SPECS)
+ASF = -mcpu=$(CPU) -m$(ARCH) -march=armv7e-m -mfloat-abi=hard -mfpu=fpv4-sp-d16 --specs=$(SPECS) 
 endif
 
 # End of overriding
 #Common or General Flags + if the PLATFORM is MSP432
-CFLAGS = -Wall -Werror -g -O0 -std=c99 -D$(PLATFORM) $(ASF)
+CFLAGS =  -Wall -Werror -g -O0 -std=c99 -D$(COURSE) -D$(VERBOSE) -D$(PLATFORM) $(ASF)
 
 PREPROCESSOR = $(SOURCES:.c=.i)
 
